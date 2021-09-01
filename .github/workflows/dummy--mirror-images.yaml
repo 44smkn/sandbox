@@ -1,0 +1,22 @@
+name: dummy--mirror-images
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  image:
+    strategy:
+      matrix:
+        image:
+          # hoge
+          - name: summerwind/actions-runner-dind
+            tag: v2.281.0-ubuntu-20.04 # renovate
+          # fuga
+          - name: moby/buildkit
+            tag: v0.9.0 # renovate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v2

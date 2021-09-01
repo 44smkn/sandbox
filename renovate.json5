@@ -1,0 +1,13 @@
+{
+  "extends": ["config:base"],
+  "regexManagers": [
+    {
+      "fileMatch": ["^\\.github/workflows/.+--mirror-images.yaml"],
+      "matchStrings": [
+        "- name: (?<depName>.*?)\\s.*tag: (?<currentValue>.*?) # renovate\\s",
+      ],
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "docker",
+    },
+  ],
+}
