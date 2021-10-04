@@ -8,7 +8,7 @@ spec:
       repository: 44smkn/sandbox
       labels:
         - sandbox
-      image: public.ecr.aws/z8o9m4l5/system-components/mirrors/summerwind/actions-runner-dind:v2.280.3-ubuntu-20.04
+      image: public.ecr.aws/z8o9m4l5/system-components/mirrors/summerwind/actions-runner-dind:v2.283.3-ubuntu-20.04
       imagePullPolicy: IfNotPresent
       dockerdWithinRunnerContainer: true
       serviceAccountName: sandbox
