@@ -15,7 +15,7 @@ jobs:
             tag: v2.280.3-ubuntu-20.04 # renovate
           # fuga
           - name: moby/buildkit
-            tag: v0.9.0 # renovate
+            tag: v0.9.1 # renovate
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
