@@ -1,21 +1,10 @@
 {
-  "extends": ["config:base"],
-  "regexManagers": [
+  extends: ["config:base"],
+  packageRules: [
     {
-      "fileMatch": ["^\\.github/workflows/.+--mirror-images.yaml"],
-      "matchStrings": [
-        "- name: (?<depName>.*?)\\s.*tag: (?<currentValue>.*?) # renovate\\s",
-      ],
-      "datasourceTemplate": "docker",
-      "versioningTemplate": "docker",
-    },
-    {
-        "fileMatch": ["system-components/.*/runnerdeployment/.+.yaml"],
-        "matchStrings": [
-          "image: public\\.ecr\\.aws\\/.+\\/mirrors\\/(?<depName>.+?):(?<currentValue>.+?)\\n",
-        ],
-        "datasourceTemplate": "docker",
-        "versioningTemplate": "docker",
+      additionalBranchPrefix: "{{packageFileName}}-",
+      matchManagers: ["github-actions"],
+      matchPackageNames: ["golangci/golangci-lint-action"],
     },
   ],
 }
