@@ -2,9 +2,10 @@
   extends: ["config:base"],
   packageRules: [
     {
-      additionalBranchPrefix: "{{packageFile}}-",
-      matchManagers: ["github-actions"],
-      matchPackageNames: ["golangci/golangci-lint-action"],
+      "additionalBranchPrefix": "{{packageFile}}-",
+      "commitMessageSuffix": "({{packageFile}})",
+      "matchManagers": ["github-actions"],
+      "matchPackageNames": ["golangci/golangci-lint-action"],
     },
   ],
 }
