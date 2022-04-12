@@ -8,6 +8,11 @@
       ],
       "commitMessageSuffix": "({{packageFileDir}})"
     },
+    {
+      "matchPackageNames": ["mumoshu/aws-secret-operator"],
+      "matchDatasources": ["github-releases"],
+      "extractVersion": "^v(?<version>.*)$",
+    },
   ],
   "regexManagers": [
     // kustomiztion.yaml
@@ -25,9 +30,8 @@
     {
       "fileMatch": ["^.*/aws-secret-operator/kustomization.yaml$"],
       "matchStrings": [
-        "newTag: (?<currentValue>.*?) # renovate: depName=(?<depName>.*?)\\n"
+        "https://raw.githubusercontent.com/(?<depName>[^/]+/[^/]+?)/v(?<currentValue>[^/]+)/",
       ],
-      "extractVersion": "^v(?<version>.*)$",
       "datasourceTemplate": "github-releases"
     },
   ]
