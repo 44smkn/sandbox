@@ -37,8 +37,6 @@
       "matchStrings": [
         // external reference
         "https://raw.githubusercontent.com/(?<depName>[^/]+/[^/]+?)/v(?<currentValue>[^/]+)/",
-        // image tag is replaced in kustomization.yaml
-        "newTag: (?<currentValue>.*?) # renovate: depName=(?<depName>.*?)\\n"
       ],
       "datasourceTemplate": "github-releases"
     },
