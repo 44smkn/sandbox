@@ -4,9 +4,14 @@
     {
       "additionalBranchPrefix": "{{packageFileDir}}-",
       "matchPaths": [
-        "system-components/overlays/**",
+        "components/overlays/**",
       ],
       "commitMessageSuffix": "({{packageFileDir}})"
+    },
+    {
+      "matchPackageNames": ["mumoshu/aws-secret-operator"],
+      "matchDatasources": ["docker"],
+      "enabled": false,
     },
     {
       "matchPackageNames": ["mumoshu/aws-secret-operator"],
